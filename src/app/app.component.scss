@@ -1,4 +1,6 @@
 $colorLetter: #565963;
+$blue-proxiad: #0f3375;
+$white: #c9c9c2;
 
 .container {
   position: absolute;
@@ -28,20 +30,18 @@ $colorLetter: #565963;
         }
 
         &__head {
-          background-color: #c9c9c2;
-          padding: 2vh .5vw;
-
+          background-color: $white;
           display: flex;
-          justify-content: space-around;
 
           & > span {
             align-self: center;
             padding: .5rem;
+            margin-right: 2rem;
           }
 
           img {
             height: auto;
-            width: 2.5rem;
+            width: 2rem;
           }
         }
 
@@ -53,7 +53,45 @@ $colorLetter: #565963;
   }
 
   &__body {
-    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+      padding: 1rem;
+      background-color: $blue-proxiad;
+      height: 15vh;
+
+      &__title {
+        margin-left: 5rem;
+        font-size: 4rem;
+        color: white;
+      }
+    }
+
+    &__cards {
+      //width: 80%;
+      display: flex;
+      align-self: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      mat-card {
+        width: 10vw;
+        margin: 1.5rem;
+        mat-card-title {
+          font-weight: bold;
+          font-size: 1rem;
+        }
+
+        button {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
+    }
+
+
   }
 
   mat-list-item {
