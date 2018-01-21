@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  elements = [
+    { label: 'Dashboard', iconName: 'dashboard'},
+    { label: 'Météo', iconName: 'wb_sunny'}
+  ]
 }

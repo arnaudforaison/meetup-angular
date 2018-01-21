@@ -1,0 +1,66 @@
+$colorLetter: #565963;
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  &__menu {
+    // padding: 1rem;
+    background-color: #2e323e;
+    color: $colorLetter;
+    width: 15rem;
+
+    &__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      display: flex;
+      flex-direction: column;
+      //align-items: center;
+
+      &__item {
+        &:first-child {
+          width: 100%;
+        }
+
+        &__head {
+          background-color: #c9c9c2;
+          padding: 2vh .5vw;
+
+          display: flex;
+          justify-content: space-around;
+
+          & > span {
+            align-self: center;
+            padding: .5rem;
+          }
+
+          img {
+            height: auto;
+            width: 2.5rem;
+          }
+        }
+
+        &__actions {
+          margin: 2vh;
+        }
+      }
+    }
+  }
+
+  &__body {
+    margin: 1rem;
+  }
+
+  mat-list-item {
+    color: white;
+
+    & .material-icons {
+      margin-right: .5rem;
+    }
+  }
+}
