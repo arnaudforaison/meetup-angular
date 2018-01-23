@@ -1,0 +1,11 @@
+<div class="cards" *ngIf="members | async as members">
+  <mat-card *ngFor="let member of members">
+    <button mat-icon-button>
+      <mat-icon>delete</mat-icon>
+    </button>
+    <mat-card-title>{{ member.name }}</mat-card-title>
+    <mat-card-subtitle>Membre</mat-card-subtitle>
+    <img mat-card-image [src]="member.photo ? member.photo.photo_link : 'https://randomuser.me/api/portraits/lego/6.jpg'">
+  </mat-card>
+
+</div>
