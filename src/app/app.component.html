@@ -12,7 +12,7 @@
       </li>
       <li class="container__menu__list__item container__menu__list__item__actions">
         <mat-list>
-          <mat-list-item *ngFor="let element of elements">
+          <mat-list-item *ngFor="let element of elements" [routerLink]="[element.link]">
             <i class="material-icons">{{ element.iconName }}</i>
             <span>{{ element.label }}</span>
           </mat-list-item>
@@ -28,5 +28,6 @@
       <h1 class="container__body__header__title">Bienvenue</h1>
     </div>
 
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

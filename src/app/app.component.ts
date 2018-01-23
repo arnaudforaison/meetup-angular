@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'app';
 
   elements = [
-    { label: 'Dashboard', iconName: 'dashboard'},
-    { label: 'Météo', iconName: 'wb_sunny'}
-  ]
+    { label: 'Dashboard', iconName: 'dashboard', link: 'dashboard'},
+    { label: 'Météo', iconName: 'wb_sunny', link: 'weather'}
+  ];
 }
