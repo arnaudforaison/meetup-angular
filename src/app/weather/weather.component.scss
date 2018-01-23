@@ -27,10 +27,8 @@
       align-items: center;
       margin-bottom: 2rem;
 
-      .material-icons {
-        font-size: 5rem;
+      &__icon {
         margin-right: 2rem;
-        color: #757575;
       }
 
       &--value {

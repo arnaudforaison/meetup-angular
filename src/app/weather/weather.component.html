@@ -1,18 +1,19 @@
 <ul class="container">
   <li class="container__item">
-    <mat-card class="container__item__date">
-      <mat-card-content>
-        <span class="container__item__date--month">November</span>
-        <h1 class="container__item__date--day">5</h1>
-        <span class="container__item__date--year">2017</span>
+    <mat-card>
+      <mat-card-content class="container__item__date">
+        <span class="container__item__date--month">{{ months[currentDay.getMonth()] }}</span>
+        <h1 class="container__item__date--day">{{ currentDay.getDate() }}</h1>
+        <span class="container__item__date--year">{{ currentDay.getFullYear() }}</span>
       </mat-card-content>
     </mat-card>
 
   </li>
-  <li class="container__item">
+  <li class="container__item" *ngIf="weather | async as currentWeather">
+    <h1>{{ currentWeather.name }}</h1>
     <span class="container__item__weather">
-      <i class="material-icons">wb_cloudy</i>
-      <span class="container__item__weather--value">22</span>
+      <img class="container__item__weather__icon" [src]="'http://openweathermap.org/img/w/' + currentWeather.weather[0].icon + '.png'">
+      <span class="container__item__weather--value">{{ currentWeather.main.temp_max }}</span>
       <span class="container__item__weather--unit">°C</span>
     </span>
   </li>
