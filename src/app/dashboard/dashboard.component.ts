@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../environments/environment';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
-import * as _ from 'lodash';
+import 'rxjs/add/operator/map';
+
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { MeetupMember } from './meetup.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,24 +13,12 @@ import * as _ from 'lodash';
 })
 export class DashboardComponent implements OnInit {
 
-  members: Observable<any[]>;
+  members: Observable<MeetupMember[]>;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    const url = 'https://api.meetup.com/Proxiad-Nord-Lille/events/246014510/rsvps';
-
-    const params = new HttpParams()
-      .set('sign', 'true')
-      .set('key', environment.meetup.apiKey)
-      .set('photo-host', 'secure')
-      .set('response', 'yes')
-      .set('only', 'member');
-
-    const options = {
-      params
-    };
-    this.members = this.httpClient.get(url, options).map(members => _.map(members, 'member'));
+    this.members = this.route.data.map(data => data.members);
   }
 
 }

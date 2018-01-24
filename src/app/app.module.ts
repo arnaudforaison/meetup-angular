@@ -1,13 +1,14 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { MaterialModule } from './shared/material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { WeatherComponent } from './weather/weather.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from './app.component';
+import { DashboardService } from './dashboard/dashboard.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MaterialModule } from './shared/material.module';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DashboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
