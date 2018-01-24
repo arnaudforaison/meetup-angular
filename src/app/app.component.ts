@@ -11,5 +11,9 @@ export class AppComponent {
   elements = [
     { label: 'Dashboard', iconName: 'dashboard'},
     { label: 'Météo', iconName: 'wb_sunny'}
-  ]
+  ];
+
+  delete(name: string) {
+    alert(`Le membre ${name} vient d'être supprimé`);
+  }
 }

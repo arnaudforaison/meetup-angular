@@ -1,9 +1,9 @@
 <div class="cards">
   <mat-card>
     <button mat-icon-button>
-      <mat-icon>delete</mat-icon>
+      <mat-icon (click)="deleteMember(name)">delete</mat-icon>
     </button>
-    <mat-card-title>Arnaud Foraison</mat-card-title>
+    <mat-card-title>{{ name }}</mat-card-title>
     <mat-card-subtitle>Membre</mat-card-subtitle>
     <img mat-card-image src="/assets/arnaud_foraison.jpg">
   </mat-card>

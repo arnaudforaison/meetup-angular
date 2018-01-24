@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  @Input() name: string;
+
+  @Output('delete') delete = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  deleteMember(name: string) {
+    this.delete.emit(name);
   }
 
 }
