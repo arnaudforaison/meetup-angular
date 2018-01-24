@@ -47,6 +47,12 @@ $white: #c9c9c2;
 
         &__actions {
           margin: 2vh;
+
+          mat-list-item {
+            &:hover {
+              cursor: pointer;
+            }
+          }
         }
       }
     }
