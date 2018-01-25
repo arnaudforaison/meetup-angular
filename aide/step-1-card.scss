@@ -1,0 +1,23 @@
+.cards {
+  // width: 80%;
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  mat-card {
+    width: 10vw;
+    margin: 1.5rem;
+
+    mat-card-title {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    button {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
